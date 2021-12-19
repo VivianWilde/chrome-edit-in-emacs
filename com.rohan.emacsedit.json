@@ -1,0 +1,8 @@
+{
+    "name":"com.rohan.emacsedit",
+    "description":"Open github files in an emacsclient process for remote viewing",
+    "path":"/home/rohan/experiments/EmacsExtension/emacsedit",
+    "type":"stdio",
+    "allowed_origins":["chrome-extension://dgmapfffglmjboejdchfmfpmmkbhiabk/",
+                       "chrome-extension://jfdndeigfaadoiallgdfpaknplbpjiea/"]
+}

@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Emacs Remote Editor",
+  "version": "0.1",
+  "description": "Allows you to open URLS such as github raw files in emacs for remote viewing and all the syntax highlighting goodness",
+
+  "icons": {
+    "16": "spacemacs.png",
+    "32": "spacemacs.png",
+    "48": "spacemacs.png",
+    "128": "spacemacs.png"
+  },
+
+  "background": { "scripts": ["background.js"], "persistent": false },
+
+  "browser_action": {
+    "default_icon": {
+      "16": "spacemacs.png",
+      "32": "spacemacs.png",
+      "48": "spacemacs.png",
+      "128": "spacemacs.png"
+    },
+    "default_title": "Open in Emacs"
+  },
+
+  "permissions": [
+    "activeTab",
+    "background",
+    "nativeMessaging"
+  ],
+
+  "offline_enabled": true,
+  "short_name": "emacsedit"
+}

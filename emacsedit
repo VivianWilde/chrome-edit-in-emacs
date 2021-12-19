@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+from subprocess import Popen
+from nativemessaging import get_message
+
+
+def is_code(path):
+    return any(
+        [
+            path.endswith(i)
+            for i in [
+                ".el",
+                ".py",
+                ".css",
+                ".js",
+                ".java",
+                ".lisp",
+                ".rkt",
+                ".c",
+                ".cpp",
+            ]
+        ]
+    )
+
+
+def open_in_emacs(url):
+    interpreter = "/usr/bin/emacsclient -nc --eval"
+    # URL we receive is one we have to open. Finding that is handled by JS.
+    # So if we want to open code, it should be in pure emacs
+    command = (
+        f"{interpreter} '(browse-url-emacs \"{url}\")'"
+        if "raw" in url
+        else f"{interpreter} '(w3m-browse-url \"{url}\")'"
+    )
+    print(command)
+    Popen(command, shell=True)
+
+
+def zenify(url):
+    interpreter = "/usr/bin/zenity --info --text"
+    command = f'{interpreter} "{url}"'
+    Popen(command, shell=True)
+
+
+url = get_message()["target"]
+open_in_emacs(url)
