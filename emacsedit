@@ -31,7 +31,6 @@ def open_in_emacs(url):
         if "raw" in url
         else f"{interpreter} '(w3m-browse-url \"{url}\")'"
     )
-    print(command)
     Popen(command, shell=True)
 
 

@@ -25,7 +25,5 @@ function processUrl(url) {
 chrome.browserAction.onClicked.addListener(function (tab) {
   let url = processUrl(tab.url);
   console.log(url);
-  port=connect()
-  port.postMessage({target : url})
   chrome.runtime.sendNativeMessage("com.rohan.emacsedit", { target: url });
 });
