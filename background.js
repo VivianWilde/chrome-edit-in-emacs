@@ -19,11 +19,12 @@ function processUrl(url) {
     return url.replace("blob", "raw");
   }
 
-  return url;
+  return url
 }
 
-chrome.browserAction.onClicked.addListener(function (tab) {
-  let url = processUrl(tab.url);
-  console.log(url);
-  chrome.runtime.sendNativeMessage("com.rohan.emacsedit", { target: url });
-});
+
+chrome.browserAction.onClicked.addListener((tab) => {
+          var url = processUrl(tab.url);
+          console.log(url);
+          chrome.runtime.sendNativeMessage("com.rohan.emacsedit", { target: url })
+        })
