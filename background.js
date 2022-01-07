@@ -24,7 +24,11 @@ function processUrl(url) {
 
 
 chrome.browserAction.onClicked.addListener((tab) => {
-          var url = processUrl(tab.url);
+    chrome.tabs.query (
+      {'active': true,
+       'windowId': chrome.windows.WINDOW_ID_CURRENT},
+      (tabs) => {
+          var url = processUrl(tabs[0].url);
           console.log(url);
           chrome.runtime.sendNativeMessage("com.rohan.emacsedit", { target: url })
-        })
+        })})
