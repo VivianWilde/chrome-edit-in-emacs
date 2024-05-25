@@ -1,0 +1,7 @@
+{
+    "name":"com.vivien.emacsedit",
+    "description":"Open github files in an emacsclient process for remote viewing",
+    "path":"/home/vivien/experiments/EmacsExtension/emacsedit",
+    "type":"stdio",
+    "allowed_extensions": ["emacsedit@vivien.com"]
+}

@@ -23,13 +23,14 @@ def is_code(path):
 
 
 def open_in_emacs(url):
+    browser = "w3m"
     interpreter = "/usr/bin/emacsclient -nc --eval"
     # URL we receive is one we have to open. Finding that is handled by JS.
     # So if we want to open code, it should be in pure emacs
     command = (
         f"{interpreter} '(browse-url-emacs \"{url}\")'"
         if "raw" in url
-        else f"{interpreter} '(w3m-browse-url \"{url}\")'"
+        else f"{interpreter} '({browser}-goto-url-new-session \"{url}\")'"
     )
     Popen(command, shell=True)
 

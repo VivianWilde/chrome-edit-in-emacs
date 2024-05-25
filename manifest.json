@@ -23,12 +23,14 @@
     "default_title": "Open in Emacs"
   },
 
-  "permissions": [
-    "activeTab",
-    "background",
-    "nativeMessaging"
-  ],
+  "permissions": ["activeTab", "nativeMessaging"],
 
   "offline_enabled": true,
-  "short_name": "emacsedit"
+  "short_name": "emacsedit",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "emacsedit@vivien.com"
+    }
+  }
 }
