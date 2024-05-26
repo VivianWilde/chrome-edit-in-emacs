@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Emacs Remote Editor",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Allows you to open URLS such as github raw files in emacs for remote viewing and all the syntax highlighting goodness",
 
   "icons": {
@@ -31,6 +31,13 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "emacsedit@vivien.com"
+    }
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+E"
+      }
     }
   }
 }
